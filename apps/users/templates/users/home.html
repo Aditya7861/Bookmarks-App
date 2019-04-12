@@ -1,0 +1,15 @@
+{% extends 'users/base.html' %}
+{% block main %}
+  {% if user.is_authenticated %}
+        <div class="jumbotron text-center">
+
+        <h3>Welcome to on boarding App</h3>
+        <a href ="{% url 'bookmarks:folders_list' %}"> Bookmark apps </a>
+        </div>
+        <p><a href="{% url 'users:logout' %}">logout</a></p>
+  {% else %}
+        <p>Account Created Successfully </p>
+        <p>Now you can log in</p>
+        <p><a href="{% url 'users:login' %}">LogIn</a></p>
+  {% endif %}
+{% endblock  %}
